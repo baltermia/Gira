@@ -2,13 +2,13 @@
 
 This is a simple copy of Atlassians Jira. Gira has many limitations and is by far not as good as the real Jira, but it's open-source at least.
 
-### Used Tools
+## Used Tools
 
 - C#
 - WPF
 - MySql
 
-### Functions
+## Functions
 
 Gira has the following functions:
 
@@ -16,8 +16,11 @@ Gira has the following functions:
 - Manager:
   - Create new Tickets
   - Move tickets from one user to another
+  - Has all normal user functionality
 - Normal user:
   - Edit own tickets
+  - Add comments
+  - Add worklogs
 - Admin portal allows account changes
 
 ## Authors
