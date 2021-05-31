@@ -1,6 +1,6 @@
 # Gira
 
-This is a simple copy of Atlassians Jira. Gira has many limitations and is by far not as good as the real Jira, but it's open-source at least.
+Gira is a simple copy of Atlassians Jira. It has many limitations and is by far not as good as the real Jira, but it's open-source at least.
 
 ## Used Tools
 
