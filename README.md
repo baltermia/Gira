@@ -25,5 +25,5 @@ Gira has the following functions:
 
 ## Authors
 
-**Baltermia** - *Hard (well done) work* - [speyck](https://github.com/speyck) 
-**Alessio** - *Second Hand / Mental support* - [antar](https://github.com/antar)
+* **Baltermia** - *Hard (well done) work* - [speyck](https://github.com/speyck)
+* **Alessio** - *Second Hand / Mental support* - [antar](https://github.com/antar)
