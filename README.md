@@ -16,7 +16,7 @@ Gira has the following functions:
 - Manager:
   - Create new Tickets
   - Move tickets from one user to another
-  - Has all normal user functionality
+  - Has all normal user functionality (listed below)
 - Normal user:
   - Edit own tickets
   - Add comments
