@@ -33,7 +33,8 @@ A Gira-Ticket holds the following data:
 - Last-Updated-Date
 - Assignee
 - Reporter
-- 
+- Comments
+- Worklogs
 
 ## Authors
 
