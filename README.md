@@ -1,6 +1,6 @@
 # Gira
 
-Gira is a simple copy of Atlassians Jira. It has many limitations and is by far not as good as the real Jira, but it's open-source at least.
+Gira is a simple copy of Atlassians Jira. It has many limitations and is by far not as good as the real Jira, but it's open-source at least. Functionality is listed under [Functions](#Functions) below.
 
 ## Used Tools
 
@@ -22,6 +22,18 @@ Gira has the following functions:
   - Add comments
   - Add worklogs
 - Admin portal allows account changes
+
+### Ticket Definition
+
+A Gira-Ticket holds the following data:
+- Title
+- Description
+- Due-Date
+- Create-Date
+- Last-Updated-Date
+- Assignee
+- Reporter
+- 
 
 ## Authors
 
