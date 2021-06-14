@@ -38,6 +38,16 @@ A Gira-Ticket holds the following data:
 - Comments
 - Worklogs
 
+## Diagrams
+
+### Use-Case diagram
+
+Click [here](https:Click this!//github.com/speyck/Gira/blob/main/Docs/Use-Case/Use-Case%20diagram.png) to see the Use-Case diagram.
+
+### Mockups
+
+Mockups can be found in [here](https://github.com/speyck/Gira/blob/main/Docs/Mockups).
+
 ## Authors
 
 * **Baltermia** - *Hard (well done) work* - [speyck](https://github.com/speyck)
