@@ -14,13 +14,15 @@ Gira has the following functions:
 
 - Create different user accounts and login
 - Manager:
-  - Create new Tickets
+  - Create new Tickets for other users
+  - Edit tickets of other users
   - Move tickets from one user to another
   - Has all normal user functionality (listed below)
 - Normal user:
+  - Add own tickets
   - Edit own tickets
-  - Add comments
-  - Add worklogs
+  - Add comments on any tickets
+  - Add worklogs on own tickets
 - Admin portal allows account changes
 
 ### Ticket Definition
@@ -32,7 +34,7 @@ A Gira-Ticket holds the following data:
 - Create-Date
 - Last-Updated-Date
 - Assignee
-- Reporter
+- Reporter (manager account)
 - Comments
 - Worklogs
 
