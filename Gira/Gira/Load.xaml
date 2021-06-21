@@ -1,0 +1,25 @@
+﻿<Window x:Class="Gira.Load"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="310" Width="550"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True">
+    <Grid>
+        <ui:ProgressRing 
+            Height="100" 
+            Width="100" 
+            IsActive="True"
+            Foreground="#737474"/>
+        <TextBlock
+            VerticalAlignment="Bottom" 
+            Margin="20 0 0 15"
+            FontSize="15"
+            Foreground="#737474">Gira is loading . . .</TextBlock>
+    </Grid>
+</Window>
