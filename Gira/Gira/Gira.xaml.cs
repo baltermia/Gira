@@ -13,13 +13,19 @@ using System.Windows.Shapes;
 namespace Gira
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for Gira.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class Gira : Window
     {
-        public Login()
+        private readonly Login Login;
+
+        public Gira(Login login)
         {
             InitializeComponent();
+
+            Login = login ?? new LoginView().GetLogin();
+
+            Login.ToString();
         }
     }
 }

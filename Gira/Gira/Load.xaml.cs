@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Interop;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using System.Threading;
 
 namespace Gira
 {
@@ -22,6 +11,14 @@ namespace Gira
         public Load()
         {
             InitializeComponent();
+
+            Login login = Login.GetSavedLogin();
+
+            Thread.Sleep(2000);
+
+            Close();
+
+            new Gira(login).ShowDialog();
         }
     }
 }
