@@ -48,6 +48,10 @@ Click [here](https://github.com/speyck/Gira/blob/main/Docs/Use-Case/Use-Case%20d
 
 Mockups can be found in [here](https://github.com/speyck/Gira/blob/main/Docs/Mockups).
 
+### Personas
+
+The personas are listed in [here](https://github.com/speyck/Gira/tree/main/Docs/Personas).
+
 ## Authors
 
 * **Baltermia** - *Hard (well done) work* - [speyck](https://github.com/speyck)
