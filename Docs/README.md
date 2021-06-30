@@ -1,6 +1,6 @@
 # Gira
 
-Gira is a simple copy of Atlassians Jira. It has many limitations and is by far not as good as the real Jira, but it's open-source at least. Functionality is listed under [Functions](#Functions) below.
+Gira is a simple copy of Atlassians Jira. Jira is a issue-tracking webapp which is used for bug tracking and agile project management. Gira has many limitations and is by far not as good as the real Jira, but it's open-source at least. Functionality is listed under [Functions](#Functions) below.
 
 ## Used Tools
 
