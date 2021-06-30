@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Gira
 {
@@ -12,13 +13,27 @@ namespace Gira
         {
             InitializeComponent();
 
-            Login login = Login.GetSavedLogin();
+            Run();
+        }
 
-            Thread.Sleep(2000);
+        private async void Run()
+        {
+            Show();
+
+            Login login = null;
+
+            await Task.Run(() => 
+            {
+                login = Login.GetSavedLogin();
+
+                Thread.Sleep(2000);
+            });
+
+            Hide();
+
+            new GiraView(login).ShowDialog();
 
             Close();
-
-            new Gira(login).ShowDialog();
         }
     }
 }

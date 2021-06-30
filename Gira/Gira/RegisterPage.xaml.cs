@@ -8,24 +8,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Gira
 {
     /// <summary>
-    /// Interaction logic for Gira.xaml
+    /// Interaction logic for RegisterPage.xaml
     /// </summary>
-    public partial class Gira : Window
+    public partial class RegisterPage : Page
     {
-        private readonly Login Login;
-
-        public Gira(Login login)
+        public RegisterPage()
         {
             InitializeComponent();
-
-            Login = login ?? new LoginView().GetLogin();
-
-            Login.ToString();
         }
     }
 }

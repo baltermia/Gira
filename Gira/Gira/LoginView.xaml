@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gira"
         mc:Ignorable="d"
-        Title="LoginView" Height="450" Width="800">
+        Title="Login / Register" Height="475" Width="350"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Frame x:Name="frMain" Grid.Row="0" NavigationUIVisibility="Hidden"/>
+
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 15" Grid.Row="1">                                
+            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri=" ">
+                <TextBlock Name="tbkChangePage" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+            </Hyperlink>
+        </TextBlock>
     </Grid>
 </Window>

@@ -17,15 +17,64 @@ namespace Gira
     /// </summary>
     public partial class LoginView : Window
     {
-        public LoginView()
+        /// <summary>
+        /// True = LoginPage, False = RegisterPage
+        /// </summary>
+        private bool activePage;
+
+        private readonly Page loginPage;
+
+        private readonly Page registerPage;
+
+        public LoginView(bool startAsLogin = true)
         {
             InitializeComponent();
+
+            activePage = startAsLogin;
+
+            loginPage = new LoginPage();
+            registerPage = new RegisterPage();
+
+            SwitchPage();
         }
 
         public Login GetLogin()
         {
             ShowDialog();
+            
             return null;
+        }
+
+        private void Navigate(Page page)
+        {
+            frMain.NavigationService.Navigate(page);
+        }
+
+        private void SwitchPage(bool? isLoginPage = null)
+        {
+            activePage = !(isLoginPage == true || (isLoginPage == null && activePage));
+
+            if (!activePage)
+            {
+                tbkChangePage.Text = "Register";
+
+                Navigate(loginPage);
+
+                // change to login
+            }
+            else
+            {
+                tbkChangePage.Text = "Login";
+
+                Navigate(registerPage);
+
+                // change to register
+            }
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            SwitchPage();
         }
     }
 }
