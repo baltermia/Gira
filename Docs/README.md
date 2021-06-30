@@ -44,9 +44,9 @@ A Gira-Ticket holds the following data:
 
 Click [here](https://github.com/speyck/Gira/blob/main/Docs/Use-Case/Use-Case%20diagram.png) to see the Use-Case diagram.
 
-### Mockups
+### Wireframes
 
-Mockups can be found in [here](https://github.com/speyck/Gira/blob/main/Docs/Mockups).
+Wireframes can be found in [here](https://github.com/speyck/Gira/blob/main/Docs/Wireframes).
 
 ### Personas
 
