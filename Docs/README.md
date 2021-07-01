@@ -6,7 +6,7 @@ Gira is a simple copy of Atlassians Jira. Jira is a issue-tracking webapp which 
 
 - C#
 - WPF
-- MySql
+- MariaDB
 
 ## Functions
 
