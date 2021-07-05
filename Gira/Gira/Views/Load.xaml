@@ -13,12 +13,10 @@
         <ui:ProgressRing 
             Height="75" 
             Width="10750" 
-            IsActive="True"
-            Foreground="#737474"/>
+            IsActive="True"/>
         <TextBlock
             VerticalAlignment="Bottom" 
             Margin="20 0 0 15"
-            FontSize="15"
-            Foreground="#737474">Gira is loading . . .</TextBlock>
+            Style="{StaticResource BodyTextBlockStyle}">Gira is loading . . .</TextBlock>
     </Grid>
 </Window>

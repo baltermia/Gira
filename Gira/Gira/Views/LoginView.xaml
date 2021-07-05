@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="Login / Register" Height="475" Width="350"
         ResizeMode="NoResize"
+        Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
+        Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
@@ -17,8 +19,8 @@
         <Frame x:Name="frMain" Grid.Row="0" NavigationUIVisibility="Hidden"/>
 
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 15" Grid.Row="1">                                
-            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri=" ">
-                <TextBlock Name="tbkChangePage" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri=" " Style="{StaticResource DefaultHyperlinkStyle}">
+                <TextBlock Name="tbkChangePage" Text="Placeholder" FontSize="14"/>
             </Hyperlink>
         </TextBlock>
     </Grid>

@@ -59,16 +59,12 @@ namespace Gira
                 tbkChangePage.Text = "Register";
 
                 Navigate(loginPage);
-
-                // change to login
             }
             else
             {
                 tbkChangePage.Text = "Login";
 
                 Navigate(registerPage);
-
-                // change to register
             }
         }
 

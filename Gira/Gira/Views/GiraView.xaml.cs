@@ -27,5 +27,14 @@ namespace Gira
 
             Login?.ToString();
         }
+
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            Hide();
+
+            new GiraView(new LoginView().GetLogin());
+
+            Close();
+        }
     }
 }
