@@ -18,9 +18,32 @@ namespace Gira.Pages
     /// </summary>
     public partial class TicketPage : Page
     {
-        public TicketPage()
+        private readonly Ticket Ticket;
+        public TicketPage(Ticket ticket)
         {
             InitializeComponent();
+
+            Ticket = ticket;
+
+            SetContent();
+        }
+
+        private void SetContent()
+        {
+            tbkTitle.Text = Ticket.Title;
+
+            tbkType.Text = Ticket.Type.ToString();
+            tbkPriority.Text = Ticket.Priority.ToString();
+            tbkStatus.Text = Ticket.Status.ToString();
+
+            tbkAssignee.Text = Ticket.Assignee.Name;
+            tbkReporter.Text = Ticket.Reporter.Name;
+
+            tbkDesc.Text = Ticket.Description;
+
+            tbkCreated.Text = Ticket.CreateDate.ToString("yyyy-MM-dd");
+            tbkDueDate.Text = Ticket.DueDate?.ToString("yyyy-MM-dd") ?? "None";
+            tbkLastModified.Text = Ticket.LastModifiedDate.ToString("yyyy-MM-dd");
         }
     }
 }

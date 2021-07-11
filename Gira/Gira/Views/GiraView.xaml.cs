@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static Gira.Ticket;
 
 namespace Gira
 {
@@ -24,7 +25,7 @@ namespace Gira
         {
             InitializeComponent();
 
-            Navigate(new TicketPage());
+            Navigate(new TicketPage(new Ticket(1, "Backend hinzufügen", "Für das Programm sollte noch das Backend hinzugefügt werden. MariaDB soll als Datenbank dienen.", new Account("Max Muster"), new Manager("Lisa Müller"), Convert.ToDateTime("12.07.2021"), Priorities.Major, Types.NewFeature, States.Paused)));
 
             Login = login ?? new LoginView().GetLogin();
 

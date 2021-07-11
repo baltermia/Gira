@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Gira.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800" 
+      d:DesignHeight="1080" d:DesignWidth="1920" 
       Title="TicketPage"
       Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
       Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}">
@@ -32,10 +32,147 @@
                         Style="{StaticResource AccentButtonStyle}"
                         Margin="0 0 20 0"/>
             </StackPanel>
+            <ScrollViewer RenderTransformOrigin="0.5, 0.5" HorizontalAlignment="Stretch">
+                <Grid Margin="0 25 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-            <Grid Margin="0 25 0 0">
-                
-            </Grid>
+                    <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Details"
+                                   Style="{StaticResource BaseTextBlockStyle}"/>
+                            <Border 
+                            Height="2" 
+                            Margin="5 0 0 0" 
+                            Background="#8888" 
+                            Width="5000"/>
+                        </StackPanel>
+                        <Grid Margin="5 5 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" >
+                                <TextBlock Text="Type:" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Text="Priority:" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Text="Status:" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Name="tbkType" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Name="tbkPriority" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Name="tbkStatus" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                            <TextBlock Text="Description"
+                                   Style="{StaticResource BaseTextBlockStyle}"/>
+                            <Border 
+                            Height="2" 
+                            Margin="5 0 0 0" 
+                            Background="#8888" 
+                            Width="5000"/>
+                        </StackPanel>
+                        <TextBlock Name="tbkDesc"
+                               Text="Placeholer" Margin="5 5 0 0"
+                               Style="{StaticResource BodyTextBlockStyle}"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                            <TextBlock Text="Attachments"
+                                   Style="{StaticResource BaseTextBlockStyle}"/>
+                            <Border 
+                            Height="2" 
+                            Margin="5 0 0 0" 
+                            Background="#8888" 
+                            Width="5000"/>
+                        </StackPanel>
+                        <Grid Margin="5 5 5 0">
+                            <Rectangle Stroke="LightGray" 
+                                   Height="30" 
+                                   StrokeThickness="1" 
+                                   StrokeDashArray="4 4"
+                                   SnapsToDevicePixels="True"/>
+                            <TextBlock Text="Drop file to attach" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource CaptionTextBlockStyle}"/>
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                            <TextBlock Text="Activity"
+                                   Style="{StaticResource BaseTextBlockStyle}"/>
+                            <Border 
+                            Height="2" 
+                            Margin="5 0 0 0" 
+                            Background="#8888" 
+                            Width="5000"/>
+                        </StackPanel>
+                        <TabControl Background="White">
+                            <TabItem Header="All" Name="tciAll"/>
+                            <TabItem Header="Comments" Name="tciComments"/>
+                            <TabItem Header="Work Log" Name="tciWorklog"/>
+                        </TabControl>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="People"
+                                   Style="{StaticResource BaseTextBlockStyle}"/>
+                            <Border 
+                            Height="2" 
+                            Margin="5 0 0 0" 
+                            Background="#8888" 
+                            Width="5000"/>
+                        </StackPanel>
+                        <Grid Margin="5 5 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Assignee:" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Text="Reporter:" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Name="tbkAssignee" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Name="tbkReporter" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                            <TextBlock Text="Dates"
+                                   Style="{StaticResource BaseTextBlockStyle}"/>
+                            <Border 
+                            Height="2" 
+                            Margin="5 0 0 0" 
+                            Background="#8888" 
+                            Width="5000"/>
+                        </StackPanel>
+                        <Grid Margin="5 5 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Created:" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Text="Due-Date:" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Text="Last-Modified:" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Name="tbkCreated" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Name="tbkDueDate" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Name="tbkLastModified" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+
+                </Grid>
+            </ScrollViewer>
         </StackPanel>
     </Border>
 </Page>

@@ -18,21 +18,24 @@ namespace Gira
         public Priorities Priority { get; private set; }
         public Types Type { get; private set; }
 
-        public Ticket(int id, string title, string desc, Account assignee, Manager reporter, DateTime? dueDate = null, Priorities prio = Priorities.None, Types type = Types.None)
+        public States Status { get; private set; }
+
+        public Ticket(int id, string title, string desc, Account assignee, Manager reporter, DateTime? dueDate = null, Priorities prio = Priorities.None, Types type = Types.None, States status = States.Open)
         {
             ID = id;
             Title = title;
             Description = desc;
             Assignee = assignee;
             Reporter = reporter;
-            dueDate = DueDate;
+            DueDate = dueDate;
             CreateDate = DateTime.Now;
             LastModifiedDate = CreateDate;
             Priority = prio;
             Type = type;
+            Status = status;
         }
 
-        public int? GetTotalLoggedWork()
+       public int? GetTotalLoggedWork()
         {
             return null;
         }
@@ -54,6 +57,15 @@ namespace Gira
             Idea,
             Improvement,
             NewFeature
+        }
+
+        public enum States
+        {
+            Open,
+            Closed,
+            Paused,
+            Fixed,
+            Done
         }
     }
 }
