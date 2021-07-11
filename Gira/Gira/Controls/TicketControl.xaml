@@ -7,8 +7,33 @@
              mc:Ignorable="d" 
              xmlns:ui="http://schemas.modernwpf.com/2019"
              d:DesignHeight="162" d:DesignWidth="350"
-             Background="White" BorderBrush="Gray" BorderThickness="1">
-    <Border Padding="8 5 5 5" BorderThickness="3 0 0 0" BorderBrush="CadetBlue">
-        
+             Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
+             Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"
+             BorderBrush="Gray" BorderThickness="1">
+
+    <Border x:Name="brdLeft" Padding="8 5 5 5" BorderThickness="3 0 0 0" BorderBrush="CadetBlue">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Grid.Row="1" Margin="0 0 0 0">                                
+                <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri=" " Style="{StaticResource DefaultHyperlinkStyle}">
+                    <TextBlock Name="tbkID" Text="ID" FontSize="16"/>
+                </Hyperlink>
+            </TextBlock>
+
+            <TextBlock Name="tbkTitel"
+                       Text="Titel"
+                       Style="{StaticResource SubtitleTextBlockStyle}"
+                       Margin="0 5 0 0"/>
+
+            <TextBlock Name="tbkDueDate"
+                       Text="Due-Date"
+                       Style="{StaticResource BodyTextBlockStyle}"
+                       Margin="0 15 0 0"/>
+
+            <TextBlock Name="tbkLogged"
+                       Text="Logged"
+                       Style="{StaticResource BodyTextBlockStyle}"
+                       Margin="0 5 0 0"/>
+
+        </StackPanel>
     </Border>
 </UserControl>

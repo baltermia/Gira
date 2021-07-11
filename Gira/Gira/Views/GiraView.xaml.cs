@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gira.Pages;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -23,6 +24,8 @@ namespace Gira
         {
             InitializeComponent();
 
+            Navigate(new TicketPage());
+
             Login = login ?? new LoginView().GetLogin();
 
             Login?.ToString();
@@ -35,6 +38,11 @@ namespace Gira
             new GiraView(new LoginView().GetLogin());
 
             Close();
+        }
+
+        private void Navigate(Page page)
+        {
+            frMain.NavigationService.Navigate(page);
         }
     }
 }

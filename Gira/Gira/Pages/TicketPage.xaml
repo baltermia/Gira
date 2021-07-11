@@ -6,9 +6,36 @@
       xmlns:local="clr-namespace:Gira.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800" 
-      Title="TicketPage">
+      Title="TicketPage"
+      Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
+      Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}">
 
-    <Grid>
-        
-    </Grid>
+    <Border Padding="15">
+        <StackPanel>
+            <TextBlock Name="tbkTitle"
+                       Text="Title"
+                       Style="{StaticResource HeaderTextBlockStyle}"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                <Button Name="btnEdit"
+                        Content="Edit"
+                        Style="{StaticResource AccentButtonStyle}"
+                        Margin="0 0 20 0"/>
+
+                <Button Name="btnComment"
+                        Content="Comment"
+                        Style="{StaticResource AccentButtonStyle}"
+                        Margin="0 0 20 0"/>
+
+                <Button Name="btnAssign"
+                        Content="Assign"
+                        Style="{StaticResource AccentButtonStyle}"
+                        Margin="0 0 20 0"/>
+            </StackPanel>
+
+            <Grid Margin="0 25 0 0">
+                
+            </Grid>
+        </StackPanel>
+    </Border>
 </Page>

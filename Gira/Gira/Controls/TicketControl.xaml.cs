@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Color = System.Drawing.Color;
+using MediaColor = System.Windows.Media.Color;
 
 namespace Gira
 {
@@ -18,9 +20,48 @@ namespace Gira
     /// </summary>
     public partial class TicketControl : UserControl
     {
-        public TicketControl()
+        public delegate void TicketControlClickedHandler(object sender, TicketControlEventArgs e);
+        public event TicketControlClickedHandler OnTicketControlClick;
+
+        public readonly Ticket Ticket;
+
+        public TicketControl(Ticket ticket)
         {
+            Ticket = ticket;
+
             InitializeComponent();
+
+            SetTicketProperties();
+
+            Color[] colors = new Color[] {
+                Color.Khaki,
+                Color.Teal,
+                Color.YellowGreen,
+                Color.Plum,
+                Color.PeachPuff,
+                Color.LightSteelBlue,
+                Color.LightCoral,
+                Color.DarkSalmon
+            };
+
+            Random rnd = new Random();
+            Color rndColor = colors[rnd.Next(colors.Length - 1)];
+            MediaColor mColor = MediaColor.FromArgb(rndColor.A, rndColor.R, rndColor.G, rndColor.B);
+
+            brdLeft.BorderBrush = new SolidColorBrush(mColor);
+        }
+
+        private void SetTicketProperties()
+        {
+            tbkID.Text = Ticket.ID.ToString(); ;
+            tbkTitel.Text = Ticket.Title;
+            tbkDueDate.Text = Ticket.DueDate?.ToString("yyyy-MM-dd") ?? "None";
+            tbkLogged.Text = Ticket.GetTotalLoggedWork()?.ToString() ?? "None";
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            OnTicketControlClick?.Invoke(sender, new TicketControlEventArgs(Ticket));
         }
     }
 }

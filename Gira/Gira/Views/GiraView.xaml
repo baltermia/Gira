@@ -9,21 +9,6 @@
         Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
         Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"
         Title="Gira" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <TextBlock Text="Gira" Margin="15" Style="{StaticResource HeaderTextBlockStyle}" />
-
-        <TextBlock HorizontalAlignment="Right" Margin="0 15 15 15"  Grid.Row="0">                                
-            <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri=" " Style="{StaticResource DefaultHyperlinkStyle}">
-                <TextBlock Text="Logout" FontSize="14"/>
-            </Hyperlink>
-        </TextBlock>
-
-        <Frame x:Name="frMain" Grid.Row="1"  NavigationUIVisibility="Hidden"/>
-    </Grid>
+    <Frame x:Name="frMain" Grid.Row="1"  NavigationUIVisibility="Hidden"/>
 </Window>
     
