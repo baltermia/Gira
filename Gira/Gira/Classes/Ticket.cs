@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Gira.Classes;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Windows.Controls;
+using System.Linq;
 
 namespace Gira
 {
@@ -17,10 +17,14 @@ namespace Gira
         public DateTime LastModifiedDate { get; private set; }
         public Priorities Priority { get; private set; }
         public Types Type { get; private set; }
-
         public States Status { get; private set; }
+        public int Estimated { get; private set; }
+        public int Remaining => GetRemainingTime();
+        public int Logged => GetLoggedTime();
+        public List<WorkLog> WorkLogs { get; private set; } = new List<WorkLog>();
+        public List<Comment> Comments { get; private set; } = new List<Comment>();
 
-        public Ticket(int id, string title, string desc, Account assignee, Manager reporter, DateTime? dueDate = null, Priorities prio = Priorities.None, Types type = Types.None, States status = States.Open)
+        public Ticket(int id, string title, string desc, Account assignee, Manager reporter, DateTime? dueDate = null, int estimated = 0, Priorities prio = Priorities.None, Types type = Types.None, States status = States.Open)
         {
             ID = id;
             Title = title;
@@ -33,11 +37,27 @@ namespace Gira
             Priority = prio;
             Type = type;
             Status = status;
+            Estimated = estimated;
         }
 
-       public int? GetTotalLoggedWork()
+        private int GetLoggedTime()
         {
-            return null;
+            return WorkLogs.Sum(w => w.Length);
+        }
+
+        private int GetRemainingTime()
+        {
+            return Logged > Estimated ? 0 : Estimated - Logged;
+        }
+
+        public void AddWorklogs(params WorkLog[] worklogs)
+        {
+            WorkLogs.AddRange(worklogs);
+        }
+
+        public void AddComments(params Comment[] comments)
+        {
+            Comments.AddRange(comments);
         }
 
         public enum Priorities
@@ -66,6 +86,43 @@ namespace Gira
             Paused,
             Fixed,
             Done
+        }
+
+        public static string SecondsToTimeString(int length)
+        {
+            int s, m, h, d;
+            string result = "";
+
+            TimeSpan time =TimeSpan.FromSeconds(length);
+
+            s = time.Seconds;
+            m = time.Minutes;
+            h = time.Hours;
+            d = time.Days;
+
+            if (d > 0)
+            {
+                result += d + "d ";
+            }
+            if (h > 0)
+            {
+                result += h + "h ";
+            }
+            if (m > 0)
+            {
+                result += m + "m ";
+            }
+            if (s > 0)
+            {
+                result += s + "s ";
+            }
+
+            if (string.IsNullOrWhiteSpace(result))
+            {
+                result = "None";
+            }
+
+            return result.Trim();
         }
     }
 }

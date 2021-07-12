@@ -22,7 +22,7 @@ namespace Gira
 
             Login login = null;
 
-            await Task.Run(() => 
+            await Task.Run(() =>
             {
                 login = Login.GetSavedLogin();
 

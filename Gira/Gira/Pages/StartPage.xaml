@@ -10,7 +10,32 @@
       Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"
       Title="StartPage">
 
-    <Grid>
-        
-    </Grid>
+    <Border Padding="15">
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Welcome to Gira!"
+                       Style="{StaticResource HeaderTextBlockStyle}"
+                       Grid.Column="0"/>
+
+                <TextBlock Grid.Column="1" Margin="0 0 10 0" HorizontalAlignment="Right" VerticalAlignment="Center">                                
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri=" " Style="{StaticResource DefaultHyperlinkStyle}">
+                        <TextBlock Text="Logout" FontSize="16"/>
+                    </Hyperlink>
+                </TextBlock>
+            </Grid>
+            <StackPanel>
+                <Button Content="Add new Ticket"
+                    Style="{StaticResource AccentButtonStyle}"
+                    Margin="0 15 0 0"/>
+                <ScrollViewer Margin="0 15 0 0">
+                    <StackPanel Name="stpTickets" />
+                </ScrollViewer>
+            </StackPanel>
+        </StackPanel>
+    </Border>
 </Page>

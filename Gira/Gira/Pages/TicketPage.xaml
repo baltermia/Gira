@@ -12,10 +12,23 @@
 
     <Border Padding="15">
         <StackPanel>
-            <TextBlock Name="tbkTitle"
-                       Text="Title"
-                       Style="{StaticResource HeaderTextBlockStyle}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
+                <TextBlock Name="tbkTitle"
+                           Text="Title"
+                           Style="{StaticResource HeaderTextBlockStyle}"
+                           Grid.Column="0"/>
+
+                <TextBlock Grid.Column="1" Margin="0 0 10 0" HorizontalAlignment="Right" VerticalAlignment="Center">                                
+                    <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri=" " Style="{StaticResource DefaultHyperlinkStyle}">
+                        <TextBlock Text="Back" FontSize="16"/>
+                    </Hyperlink>
+                </TextBlock>
+            </Grid>
             <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
                 <Button Name="btnEdit"
                         Content="Edit"
@@ -109,9 +122,12 @@
                             Width="5000"/>
                         </StackPanel>
                         <TabControl Background="White">
-                            <TabItem Header="All" Name="tciAll"/>
-                            <TabItem Header="Comments" Name="tciComments"/>
-                            <TabItem Header="Work Log" Name="tciWorklog"/>
+                            <TabItem Header="Comments" Name="tciComments">
+                                <StackPanel Name="stpComments"/>
+                            </TabItem>
+                            <TabItem Header="Work Log" Name="tciWorklog">
+                                <StackPanel Name="stpWorklogs"/>
+                            </TabItem>
                         </TabControl>
                     </StackPanel>
 
@@ -137,8 +153,16 @@
                             </StackPanel>
 
                             <StackPanel Grid.Column="1">
-                                <TextBlock Name="tbkAssignee" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
-                                <TextBlock Name="tbkReporter" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Margin="0 0 0 0">                                
+                                    <Hyperlink Style="{StaticResource DefaultHyperlinkStyle}">
+                                        <TextBlock Name="tbkAssignee" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                                    </Hyperlink>
+                                </TextBlock>
+                                <TextBlock Margin="0 0 0 0">                                
+                                    <Hyperlink Style="{StaticResource DefaultHyperlinkStyle}">
+                                        <TextBlock Name="tbkReporter" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                                    </Hyperlink>
+                                </TextBlock>
                             </StackPanel>
                         </Grid>
 
@@ -168,6 +192,51 @@
                                 <TextBlock Name="tbkDueDate" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
                                 <TextBlock Name="tbkLastModified" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
                             </StackPanel>
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                            <TextBlock Text="Time Tracking"
+                                   Style="{StaticResource BaseTextBlockStyle}"/>
+                            <Border 
+                            Height="2" 
+                            Margin="5 0 0 0" 
+                            Background="#8888" 
+                            Width="1000"/>
+                        </StackPanel>
+                        <Grid Margin="5 5 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Estimated:" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Text="Remaining:" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Text="Logged:" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </StackPanel>
+
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <ProgressBar Name="pbEstimated" VerticalAlignment="Center" Height="20"/>
+                                    <ProgressBar Name="pbRemaining" VerticalAlignment="Center" Height="20" Foreground="Gold">
+                                        <ProgressBar.LayoutTransform>
+                                            <RotateTransform Angle="180"/>
+                                        </ProgressBar.LayoutTransform>
+                                    </ProgressBar>
+                                    <ProgressBar Name="pbLogged" VerticalAlignment="Center" Height="20" Foreground="LightGreen"/>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1" Margin="5 0 0 0">
+                                    <TextBlock Name="tbkEstimated" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                                    <TextBlock Name="tbkRemaining" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                                    <TextBlock Name="tbkLogged" Text="Placeholder" Style="{StaticResource BodyTextBlockStyle}"/>
+                                </StackPanel>
+                            </Grid>
                         </Grid>
                     </StackPanel>
 

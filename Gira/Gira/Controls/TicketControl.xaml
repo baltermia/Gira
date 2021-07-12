@@ -9,11 +9,11 @@
              d:DesignHeight="162" d:DesignWidth="350"
              Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
              Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"
-             BorderBrush="Gray" BorderThickness="1">
+             BorderBrush="Gray" BorderThickness="1" Margin="5">
 
     <Border x:Name="brdLeft" Padding="8 5 5 5" BorderThickness="3 0 0 0" BorderBrush="CadetBlue">
         <StackPanel VerticalAlignment="Center">
-            <TextBlock Grid.Row="1" Margin="0 0 0 0">                                
+            <TextBlock Margin="0 0 0 0">                                
                 <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri=" " Style="{StaticResource DefaultHyperlinkStyle}">
                     <TextBlock Name="tbkID" Text="ID" FontSize="16"/>
                 </Hyperlink>

@@ -56,7 +56,7 @@ namespace Gira
             tbkID.Text = Ticket.ID.ToString(); ;
             tbkTitel.Text = Ticket.Title;
             tbkDueDate.Text = Ticket.DueDate?.ToString("yyyy-MM-dd") ?? "None";
-            tbkLogged.Text = Ticket.GetTotalLoggedWork()?.ToString() ?? "None";
+            tbkLogged.Text = Ticket.Logged.ToString();
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)

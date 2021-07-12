@@ -1,15 +1,10 @@
-﻿using System;
+﻿using Gira.Classes;
+using Gira.Controls;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+using System.Linq;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Gira.Pages
 {
@@ -18,7 +13,11 @@ namespace Gira.Pages
     /// </summary>
     public partial class TicketPage : Page
     {
-        private readonly Ticket Ticket;
+        public delegate void TicketPageHandler(object sender, EventArgs e);
+        public event TicketPageHandler OnBackButtonClick;
+
+        public readonly Ticket Ticket;
+
         public TicketPage(Ticket ticket)
         {
             InitializeComponent();
@@ -44,6 +43,30 @@ namespace Gira.Pages
             tbkCreated.Text = Ticket.CreateDate.ToString("yyyy-MM-dd");
             tbkDueDate.Text = Ticket.DueDate?.ToString("yyyy-MM-dd") ?? "None";
             tbkLastModified.Text = Ticket.LastModifiedDate.ToString("yyyy-MM-dd");
+
+            int estimated = Ticket.Estimated;
+            int remaining = Ticket.Remaining;
+            int logged = Ticket.Logged;
+
+            int percentage = (int)Math.Round((double)(100 * logged) / estimated);
+
+            tbkEstimated.Text = Ticket.SecondsToTimeString(estimated);
+            tbkRemaining.Text = Ticket.SecondsToTimeString(remaining);
+            tbkLogged.Text = Ticket.SecondsToTimeString(logged);
+
+            pbEstimated.Value = logged > estimated ? 100 / logged * estimated : 0;
+            pbRemaining.Value = 100 - percentage;
+            pbLogged.Value = percentage;
+
+            Ticket.WorkLogs.Select(w => new WorkLogControl(w)).OrderBy(w => w.WorkLog.Created).ToList().ForEach(w => stpWorklogs.Children.Add(w));
+            Ticket.Comments.Select(c => new CommentControl(c)).OrderBy(c => c.Comment.Created).ToList().ForEach(c => stpComments.Children.Add(c));
+        }
+
+        public void Reload() => SetContent();
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            OnBackButtonClick?.Invoke(sender, new EventArgs());
         }
     }
 }
