@@ -1,12 +1,12 @@
 # Gira
 
-Gira is a simple copy of Atlassians Jira. Jira is a issue-tracking webapp which is used for bug tracking and agile project management. Gira has many limitations and is by far not as good as the real Jira, but it's open-source at least. Functionality is listed under [Functions](#Functions) below.
+Gira is a simple copy of Atlassians Jira. Jira is a issue-tracking webapp which is used for bug tracking and agile project management. Gira has many limitations and is by far not as good as the real Jira, but it's open-source at least. Only the GUI is implemented, there's no real backend. The UI was created with [ModernWPF](https://github.com/Kinnara/ModernWpf). Functionality is listed under [Functions](#Functions) below.
 
 ## Used Tools
 
-- C#
 - WPF
-- MariaDB
+- C#
+- ModernWPF library
 
 ## Functions
 
