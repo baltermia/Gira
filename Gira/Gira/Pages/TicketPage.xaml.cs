@@ -1,7 +1,5 @@
-﻿using Gira.Classes;
-using Gira.Controls;
+﻿using Gira.Controls;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Navigation;
